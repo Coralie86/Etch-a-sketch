@@ -1,0 +1,11 @@
+.grid {
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+}
+
+.squareDiv {
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+}
