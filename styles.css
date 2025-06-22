@@ -8,4 +8,10 @@
     border: 1px solid black;
     height: 30px;
     width: 30px;
+    box-sizing: border-box;
+}
+
+#buttonSquare {
+    text-align: center;
+    margin: 30px 0;
 }

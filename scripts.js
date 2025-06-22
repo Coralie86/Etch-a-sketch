@@ -1,5 +1,6 @@
 
-const div = document.querySelector(".grid");
+const grid = document.querySelector(".grid");
+
 
 for (let u =0; u <=15; u++){
     const line = document.createElement('div');
@@ -7,7 +8,47 @@ for (let u =0; u <=15; u++){
         const square = document.createElement('div');
 
         square.classList.add("squareDiv");
+
+        square.addEventListener('mousemove', () =>{
+            square.style.backgroundColor = "black";
+        })
+
+
         line.appendChild(square);
     }
-    div.appendChild(line);
+    grid.appendChild(line);
 }
+
+const btn = document.querySelector("#buttonSquare")
+btn.addEventListener('click', () => {
+    let nbSquare = Number(prompt("How many squares do you want per line?"))
+
+    while(nbSquare >=100){
+        nbSquare = Number(prompt("How many squares do you want per line?"))
+    }
+    const div = document.querySelector(".grid");
+    document.body.removeChild(div);
+
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("grid")
+    
+    for (let u =0; u <= nbSquare-1; u++){
+    const line = document.createElement('div');
+        for(let i=0; i<= nbSquare-1; i++) {
+            const square = document.createElement('div');
+
+            square.classList.add("squareDiv");
+            square.style.height = String(480 / nbSquare) + 'px';
+            square.style.width = String(480 / nbSquare) +'px';
+
+            square.addEventListener('mousemove', () =>{
+                square.style.backgroundColor = "black";
+            })
+
+
+            line.appendChild(square);
+        }
+    newDiv.appendChild(line);
+    }
+    document.body.appendChild(newDiv);    
+})
