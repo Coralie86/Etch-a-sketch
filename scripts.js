@@ -1,7 +1,7 @@
 
 const grid = document.querySelector(".grid");
 
-
+let opacity = 0;
 for (let u =0; u <=15; u++){
     const line = document.createElement('div');
     for(let i=0; i<=15; i++) {
@@ -9,8 +9,13 @@ for (let u =0; u <=15; u++){
 
         square.classList.add("squareDiv");
 
-        square.addEventListener('mousemove', () =>{
-            square.style.backgroundColor = "black";
+        square.addEventListener('mouseover', () =>{
+            let red = Math.floor(Math.random() * 255);
+            let green = Math.floor(Math.random() * 255);
+            let blue = Math.floor(Math.random() * 255);
+            square.style.backgroundColor = `rgb(${red} ${green} ${blue})`;
+            square.style.opacity = `${opacity}%`;
+            opacity +=10;
         })
 
 
@@ -29,6 +34,7 @@ btn.addEventListener('click', () => {
     const div = document.querySelector(".grid");
     document.body.removeChild(div);
 
+    let opacity = 0;
     const newDiv = document.createElement("div");
     newDiv.classList.add("grid")
     
@@ -41,8 +47,13 @@ btn.addEventListener('click', () => {
             square.style.height = String(480 / nbSquare) + 'px';
             square.style.width = String(480 / nbSquare) +'px';
 
-            square.addEventListener('mousemove', () =>{
-                square.style.backgroundColor = "black";
+            square.addEventListener('mouseover', () =>{
+                let red = Math.floor(Math.random() * 255);
+                let green = Math.floor(Math.random() * 255);
+                let blue = Math.floor(Math.random() * 255);
+                square.style.backgroundColor = `rgb(${red} ${green} ${blue})`;
+                square.style.opacity = `${opacity}%`;
+                opacity +=10;
             })
 
 
